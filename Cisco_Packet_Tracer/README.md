@@ -2,7 +2,7 @@
 
 Hands-on Cisco Packet Tracer labs covering ACLs, port security, GRE VPN tunnels, IOS IPS, and ASA firewall configuration. Each section includes topology, configuration commands, and expected results.
 
-📄 [Full original lab notes (PDF)](./Cisco_ACL.pdf)
+📄 [Full original lab notes (PDF)](./CPT_PDF.pdf)
 
 ---
 
@@ -30,7 +30,6 @@ show access-lists
 **Test:** Ping from IT PCs to server (should succeed) and from HR PC to server (should fail).
 
 ![Standard ACL topology](images/standard-acl-topology.png)
-*(Add a screenshot of `show access-lists` output here once you run the lab)*
 
 ---
 
@@ -53,7 +52,6 @@ show access-lists
 
 > Note: extended ACLs use wildcard masks (e.g. `0.0.0.255`), not subnet masks.
 
-*(Same topology as Standard ACL above — add a `show access-lists` screenshot showing the extended entries)*
 
 ---
 
@@ -74,7 +72,6 @@ Allow: IP   for 0.0.0.0 mask 255.255.255.255
 - Browsing to the server (HTTP, e.g. `http://1.0.0.1`) from the same PC → works (IP/TCP still allowed)
 
 ![Server firewall topology](images/server-firewall-topology.png)
-*(Add a screenshot of the failed ping / successful browser test here)*
 
 ---
 
@@ -111,7 +108,6 @@ interface range fastEthernet 0/3-24, gigabitEthernet 0/1-2
    show port-security interface fastEthernet 0/2
    ```
 
-*(Add a screenshot of the `show port-security interface` output showing the violation counter)*
 
 ---
 
@@ -136,7 +132,6 @@ show interface tunnel 20
 ```
 
 ![VPN tunnel topology](images/vpn-topology.png)
-*(Add a screenshot of `show interface tunnel 10` confirming the tunnel is up)*
 
 ---
 
@@ -188,7 +183,6 @@ show ip ips all
 **Expected result:** Traffic from inside → outside works normally; traffic matching the tuned signature from outside → inside is dropped and alerted (visible in the syslog server).
 
 ![IPS topology](images/ips-topology.png)
-*(Add a screenshot of the syslog server showing the IPS alert/deny log entry)*
 
 ---
 
@@ -263,10 +257,5 @@ show nat
 2. After applying the ACL: both PCs get replies.
 
 ![ASA topology](images/asa-topology.png)
-*(Add a screenshot of `show xlate` / `show nat` output confirming NAT translations)*
 
----
 
-## Notes
-- All labs built and tested in Cisco Packet Tracer.
-- Screenshots referenced above (`images/`) should be added showing each `show` command output and successful/failed ping tests — this is what demonstrates the config actually worked, not just that it was typed in.
